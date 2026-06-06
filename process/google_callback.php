@@ -2,8 +2,8 @@
 session_start();
 require_once '../config/database.php';
 
-$client_id = '141766128390-2okr50lur3ebmoupq4d1bsd8srhvcjjc.apps.googleusercontent.com';
-$client_secret = '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';
+$client_id = 'ADD_GOOGLE_CLIENT_ID_HERE';
+$client_secret = 'ADD_GOOGLE_CLIENT_SECRET_HERE';
 $redirect_uri = 'http://localhost/rw/process/google_callback.php';
 
 if (!isset($_GET['code'])) {
