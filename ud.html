@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Roadwatch · Under Development</title>
+    <link rel="icon" type="image/png" href="assets/ts-nx-darklogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background: radial-gradient(circle at 30% 10%, #0a0a0a 0%, #180101 70%, #1f0202 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+        .progress-bar-bg {
+            background: rgba(30, 30, 30, 0.85);
+            border: 1px solid rgba(220, 38, 38, 0.5);
+        }
+        .progress-fill {
+            background: linear-gradient(95deg, #b91c1c, #ef4444, #dc2626);
+            box-shadow: 0 0 10px rgba(220, 38, 38, 0.7);
+            transition: width 0.3s ease;
+        }
+        .status-pulse {
+            animation: pulse-red 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-red {
+            0%, 100% { opacity: 0.75; box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
+            50% { opacity: 1; box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+        }
+        .border-gradient-red {
+            background: linear-gradient(120deg, #dc2626, #7f1d1d, #dc2626);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hover-lift {
+            transition: transform 0.2s ease, border-color 0.2s;
+        }
+        .hover-lift:hover {
+            transform: translateY(-3px);
+            border-color: #ef4444;
+        }
+        .animate-in {
+            animation: fadeUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .shine-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #e0e0e0 50%, #b0b0b0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        @media (max-width: 640px) {
+            .custom-padding {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="m-0 p-0 flex items-center justify-center antialiased">
+
+    <div class="w-full max-w-6xl mx-auto px-5 py-10 md:py-16 lg:py-20 custom-padding">
+        <div class="flex flex-col items-center justify-center gap-8 md:gap-10">
+            
+            <div class="text-center space-y-4 animate-in">
+                <div class="inline-flex items-center gap-2 bg-black/50 backdrop-blur-sm px-5 py-2 rounded-full border border-red-800/50 mb-1 animate-in delay-100">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-80"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600 status-pulse"></span>
+                    </span>
+                    <span class="text-red-400 text-xs font-semibold uppercase tracking-wider">Active Development</span>
+                </div>
+
+                <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter animate-in delay-100">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">Under</span>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700 ml-2 md:ml-3">Development</span>
+                </h1>
+
+                <div class="h-1 w-28 bg-gradient-to-r from-red-600 to-red-800 mx-auto rounded-full mt-5 mb-5 animate-in delay-150"></div>
+
+                <p class="text-gray-300 text-base md:text-xl max-w-2xl mx-auto font-medium leading-relaxed px-3 animate-in delay-200">
+                    We’re crafting a powerful and responsive digital experience.
+                    <span class="text-red-400 font-semibold">Stay tuned!</span>
+                </p>
+            </div>
+
+            <div class="w-full max-w-md md:max-w-lg mt-2 animate-in delay-300">
+                <div class="glass-panel rounded-2xl p-5 md:p-7 space-y-5">
+                    <div class="flex justify-between items-center text-sm font-semibold">
+                        <span class="text-gray-300 tracking-wide">BUILD STATUS</span>
+                        <span class="text-red-400 bg-red-950/50 px-3 py-1 rounded-full text-xs font-mono">v1.7.0 · BETA</span>
+                    </div>
+                    <div class="progress-bar-bg w-full rounded-full h-3 overflow-hidden">
+                        <div class="progress-fill h-full rounded-full" style="width: 68%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-400">
+                        <span>UI/UX Integration</span>
+                        <span class="text-red-300 font-mono">68%</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <div class="flex items-center gap-2 text-gray-300 text-sm">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293L9 13l-3.707-3.707a1 1 0 00-1.414 1.414l4.5 4.5a1 1 0 001.414 0l8.5-8.5a1 1 0 00-1.414-1.414z"/></svg>
+                            <span class="text-xs md:text-sm">Mobile first</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300 text-sm">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293L9 13l-3.707-3.707a1 1 0 00-1.414 1.414l4.5 4.5a1 1 0 001.414 0l8.5-8.5a1 1 0 00-1.414-1.414z"/></svg>
+                            <span class="text-xs md:text-sm">Performance ready</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300 text-sm">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293L9 13l-3.707-3.707a1 1 0 00-1.414 1.414l4.5 4.5a1 1 0 001.414 0l8.5-8.5a1 1 0 00-1.414-1.414z"/></svg>
+                            <span class="text-xs md:text-sm">Responsive layout</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300 text-sm">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293L9 13l-3.707-3.707a1 1 0 00-1.414 1.414l4.5 4.5a1 1 0 001.414 0l8.5-8.5a1 1 0 00-1.414-1.414z"/></svg>
+                            <span class="text-xs md:text-sm">Dark theme</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-800/60 w-full text-center animate-in delay-300">
+                <div class="flex justify-center items-center gap-2 flex-wrap">
+                    <span class="text-3xl md:text-4xl font-black tracking-tighter bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">NOVATEX</span>
+                    <span class="text-2xl md:text-3xl font-black tracking-tighter text-white/90">STUDIOS</span>
+                    <span class="text-xs text-red-500 ml-1 font-mono border border-red-800/40 px-2 py-0.5 rounded">®</span>
+                </div>
+                <p class="text-gray-600 text-[11px] md:text-xs mt-4 tracking-wide">© 2026 NovateX Studios — All Developed by Haven Charles Papasin</p>
+                <div class="flex justify-center gap-4 mt-3">
+                    <span class="text-gray-600 text-[10px] uppercase tracking-wider">Roadwatch</span>
+                    <span class="text-gray-700">•</span>
+                    <span class="text-gray-600 text-[10px] uppercase tracking-wider">UnderDev</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            let progressInterval;
+            const fillElement = document.querySelector('.progress-fill');
+            const percentElement = document.querySelector('.flex.justify-between.text-xs.text-gray-400 span.text-red-300.font-mono');
+            
+            if (fillElement && percentElement) {
+                let currentWidth = 68;
+                const targetWidth = 82;
+                const step = () => {
+                    if (currentWidth < targetWidth) {
+                        currentWidth += 0.25;
+                        if (currentWidth > targetWidth) currentWidth = targetWidth;
+                        fillElement.style.width = currentWidth + '%';
+                        if (percentElement) percentElement.innerText = Math.floor(currentWidth) + '%';
+                        if (currentWidth >= targetWidth) clearInterval(progressInterval);
+                    } else {
+                        clearInterval(progressInterval);
+                    }
+                };
+                progressInterval = setInterval(step, 45);
+            }
+            
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple-effect');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.backgroundColor = 'rgba(255, 70, 70, 0.4)';
+                    ripple.style.width = '10px';
+                    ripple.style.height = '10px';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'rippleAnim 0.5s linear';
+                    ripple.style.pointerEvents = 'none';
+                    const rect = btn.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+                    btn.style.position = 'relative';
+                    btn.style.overflow = 'hidden';
+                    btn.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 500);
+                    
+                    if (btn.innerText.includes('Launch Notification')) {
+                        const toast = document.createElement('div');
+                        toast.innerText = '🔔 You\'ll be first to know when Roadwatch launches!';
+                        toast.style.position = 'fixed';
+                        toast.style.bottom = '24px';
+                        toast.style.left = '50%';
+                        toast.style.transform = 'translateX(-50%)';
+                        toast.style.backgroundColor = '#1f1f1f';
+                        toast.style.color = '#ffabab';
+                        toast.style.padding = '12px 24px';
+                        toast.style.borderRadius = '40px';
+                        toast.style.fontSize = '14px';
+                        toast.style.fontWeight = '500';
+                        toast.style.backdropFilter = 'blur(12px)';
+                        toast.style.background = 'rgba(0,0,0,0.8)';
+                        toast.style.border = '1px solid #dc2626';
+                        toast.style.zIndex = '9999';
+                        toast.style.fontFamily = 'Inter, sans-serif';
+                        toast.style.boxShadow = '0 10px 25px -5px rgba(0,0,0,0.5)';
+                        document.body.appendChild(toast);
+                        setTimeout(() => {
+                            toast.style.opacity = '0';
+                            toast.style.transition = 'opacity 0.3s';
+                            setTimeout(() => toast.remove(), 400);
+                        }, 2600);
+                    } else if (btn.innerText.includes('Follow Progress')) {
+                        const panel = document.querySelector('.glass-panel');
+                        if (panel) {
+                            panel.style.transition = 'all 0.2s';
+                            panel.style.transform = 'scale(1.01)';
+                            panel.style.borderColor = '#ef4444';
+                            setTimeout(() => {
+                                panel.style.transform = '';
+                                panel.style.borderColor = '';
+                            }, 400);
+                        }
+                        const statusMsg = document.createElement('div');
+                        statusMsg.innerText = '📡 Build tracker — current sprint: Frontend polish + animations';
+                        statusMsg.style.position = 'fixed';
+                        statusMsg.style.bottom = '80px';
+                        statusMsg.style.left = '20px';
+                        statusMsg.style.right = '20px';
+                        statusMsg.style.maxWidth = '320px';
+                        statusMsg.style.margin = '0 auto';
+                        statusMsg.style.backgroundColor = '#111';
+                        statusMsg.style.borderLeft = '4px solid #dc2626';
+                        statusMsg.style.color = '#e5e5e5';
+                        statusMsg.style.padding = '12px 18px';
+                        statusMsg.style.borderRadius = '16px';
+                        statusMsg.style.fontSize = '13px';
+                        statusMsg.style.fontWeight = '500';
+                        statusMsg.style.backdropFilter = 'blur(16px)';
+                        statusMsg.style.background = 'rgba(10,10,10,0.85)';
+                        statusMsg.style.border = '1px solid #3a1a1a';
+                        statusMsg.style.zIndex = '9999';
+                        statusMsg.style.fontFamily = 'Inter, monospace';
+                        statusMsg.style.textAlign = 'center';
+                        document.body.appendChild(statusMsg);
+                        setTimeout(() => {
+                            statusMsg.style.opacity = '0';
+                            statusMsg.style.transition = 'opacity 0.25s';
+                            setTimeout(() => statusMsg.remove(), 300);
+                        }, 3000);
+                    }
+                });
+            }
+            
+            const styleRipple = document.createElement('style');
+            styleRipple.textContent = `
+                @keyframes rippleAnim {
+                    from { transform: scale(0); opacity: 0.6; }
+                    to { transform: scale(2.5); opacity: 0; }
+                }
+                .glass-panel, button {
+                    transition: all 0.2s ease;
+                }
+                @media (max-width: 480px) {
+                    .glass-panel .grid {
+                        gap: 0.75rem;
+                    }
+                    h1 {
+                        line-height: 1.2;
+                    }
+                }
+            `;
+            document.head.appendChild(styleRipple);
+            
+            const metaViewport = document.querySelector('meta[name="viewport"]');
+            if (metaViewport) {
+                metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover');
+            }
+            
+            const handleOrientation = () => {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            };
+            window.addEventListener('resize', handleOrientation);
+            handleOrientation();
+        })();
+    </script>
+</body>
+</html>
