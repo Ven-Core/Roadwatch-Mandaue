@@ -8,7 +8,7 @@ $redirect_uri = 'http://localhost/rw/process/google_callback.php';
 
 if (!isset($_GET['code'])) {
     $_SESSION['error'] = 'Authorization code not found';
-    header('Location: ../register.html');
+    header('Location: ../register.html');git push -u origin main
     exit();
 }
 
