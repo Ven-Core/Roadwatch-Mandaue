@@ -1,4 +1,4 @@
-const GROQ_API_KEY = 'ADD_GROQ_API_KEY_HERE';
+// const GROQ_API_KEY = 'ADD_GROQ_API_KEY_HERE';
 const GROQ_MODEL = 'OpenAI/gpt-oss-120b';
 
 async function sendToGroq(userMessage) {
