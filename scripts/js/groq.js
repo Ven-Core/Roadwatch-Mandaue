@@ -1,5 +1,5 @@
-// Add GROQ_API_KEY and GROQ_MODEL constants, and implement sendToGroq function to send user messages to Groq API and return the response.
-const GROQ_MODEL = 'OpenAI/gpt-oss-120b';
+// const GROQ_API_KEY = 'ADD_GROQ_API_KEY_HERE';
+// const GROQ_MODEL = 'OpenAI/gpt-oss-120b';
 
 async function sendToGroq(userMessage) {
     try {
