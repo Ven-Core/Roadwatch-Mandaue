@@ -2,8 +2,7 @@
 session_start();
 require_once '../config/database.php';
 
-// $client_id = 'ADD_GOOGLE_CLIENT_ID_HERE';
-// $client_secret = 'ADD_GOOGLE_CLIENT_SECRET_HERE';
+// ADD CLIENT_ID_HERHE AND CLIENT_SECRET_HERE ALSO FUNCTION TO GET THEM FROM ENVIRONMENT VARIABLES
 $redirect_uri = 'http://localhost/rw/process/google_callback.php';
 
 if (!isset($_GET['code'])) {
