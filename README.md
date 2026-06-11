@@ -1,131 +1,72 @@
-# RoadWatch: Road Maintenance Report & Monitoring System
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.0+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Bootstrap-5.0+-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/Leaflet-1.9+-199900?style=for-the-badge&logo=leaflet&logoColor=white" alt="Leaflet">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
 
-&gt;&gt; A user-friendly platform for citizens to report road maintenance issues
+<h1 align="center">ROADWATCH</h1>
 
-&gt;&gt; with photos and exact locations, while enabling LGUs to monitor,
+<p align="center"><strong>Road Maintenance Report & Monitoring System</strong></p>
 
-&gt;&gt; manage, and resolve reports in a timely manner.
+<p align="center">
+  A citizen-friendly platform for reporting road maintenance issues with photos and exact locations, 
+  enabling Local Government Units (LGUs) to monitor, manage, and resolve reports efficiently.
+</p>
 
----
+## ✨ Features
 
-## Features
-
-&gt;&gt; Mapping and pinning of road issues using Leaflet and OpenStreetMap
-
-&gt;&gt; Account management and email verification via PHPMailer
-
-&gt;&gt; Role-based functionality for LGU and Citizen users
-
-&gt;&gt; Responsive interface built with Bootstrap 5
-
-&gt;&gt; Hybrid Android app for mobile access
-
----
-
-## Tech Stack
-
-| Layer | Technology | Logo |
-|:-----:|------------|:----:|
-| Frontend | Bootstrap 5 | <img src="https://kimi-web-img.moonshot.cn/img/www.thebayacompany.com/f620c4c23c60089c203e2329c76b15056f5c35a5.png" height="40"> |
-| Frontend | Leaflet | <img src="https://cdn.brandfetch.io/idtZo-YYcC/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B" height="40"> |
-| Frontend | OpenStreetMap | <img src="https://kimi-web-img.moonshot.cn/img/lh7-rt.googleusercontent.com/d1f0188b4bcbad8ab745af2e47371d023333236a" height="40"> |
-| Backend | PHP | <img src="https://kimi-web-img.moonshot.cn/img/upload.wikimedia.org/524825e2aa312576b5a284a2e36291ef461e52d3.png" height="40"> |
-| Backend | PHPMailer | <img src="https://kimi-web-img.moonshot.cn/img/avatars.githubusercontent.com/bfe1799e23a1d06ff800385d10cf01d8118afb15" height="40"> |
-| Mobile | Hybrid Android App | <img src="https://cdn.brandfetch.io/idkTFaEAWt/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B" height="40"> |
-| Database | MySQL | <img src="https://kimi-web-img.moonshot.cn/img/1000logos.net/cd7c2257df68f7e5e367e66c9ac01dbc386efc93.png" height="40"> |
+| Feature | Description |
+|---------|-------------|
+| 📍 **Interactive Mapping** | Pin road issues on an interactive map using Leaflet.js and OpenStreetMap |
+| 📸 **Photo Reporting** | Upload multiple photos with each report for better documentation |
+| 📧 **Email Verification** | Secure account registration with PHPMailer email verification |
+| 👥 **Role-Based Access** | Separate dashboards and permissions for Citizens and LGU admins |
+| 📱 **Responsive Design** | Mobile-first interface built with Bootstrap 5 |
+| 🤖 **Hybrid Mobile App** | Android app for on-the-go reporting |
+| 📊 **Analytics Dashboard** | Generate maintenance reports and track resolution metrics |
+| 🔔 **Real-Time Status** | Track report status from submission to resolution |
 
 ---
 
-## Installation
+## 🛠️ Tech Stack
 
-### Prerequisites
+### Frontend
+<p>
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=flat&logo=bootstrap&logoColor=white" alt="Bootstrap 5">
+  <img src="https://img.shields.io/badge/Leaflet-199900?style=flat&logo=leaflet&logoColor=white" alt="Leaflet">
+  <img src="https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=flat&logo=openstreetmap&logoColor=white" alt="OpenStreetMap">
+</p>
 
-- PHP &gt;= 8.0
-- MySQL &gt;= 8.0
-- Apache or Nginx Web Server
-- Composer
-- Android Studio (for mobile app)
+### Backend
+<p>
+  <img src="https://img.shields.io/badge/PHP-8.0+-777BB4?style=flat&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/PHPMailer-F37626?style=flat&logo=gmail&logoColor=white" alt="PHPMailer">
+  <img src="https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat&logo=mysql&logoColor=white" alt="MySQL">
+</p>
 
-### Setup
-
-1. Clone the repository
-   git clone https://github.com/Ven-Core/Roadwatch-Mandaue.git
-   cd roadwatch
-
-2. Install dependencies
-   composer install
-
-3. Configure environment
-   cp config/config.example.php config/config.php
-   Edit config.php with your database and SMTP credentials
-
-4. Import database
-   mysql -u root -p roadwatch &lt; database/roadwatch.sql
-
-5. Set permissions
-   chmod 755 uploads/
-   chmod 644 config/config.php
-
-6. Configure PHPMailer
-   Update SMTP settings in config/config.php
-
-7. Access the application
-   Web: http://localhost/roadwatch
+### Mobile
+<p>
+  <img src="https://img.shields.io/badge/Android-Hybrid-3DDC84?style=flat&logo=android&logoColor=white" alt="Android">
+</p>
 
 ---
 
-## Usage
+###  📝 License
 
-### For Citizens
-
-1. Register and verify your email
-2. Click "Report Issue" on the map
-3. Drop a pin on the exact location
-4. Upload photos and describe the issue
-5. Track your report status in real-time
-
-### For LGUs
-
-1. Login with LGU credentials
-2. View all reports on the admin dashboard
-3. Filter by status: Pending, In Progress, Resolved
-4. Update report status and add resolution notes
-5. Generate maintenance analytics reports
+<p>This project is licensed under the MIT License — see the LICENSE file for details.</p>
 
 ---
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Team
-
-Developed by Team NovateX
-
----
-
-## Acknowledgments
-
-- OpenStreetMap for map data
-- Leaflet.js for interactive mapping
-- Bootstrap for UI components
-- PHPMailer for email services
-
----
-
-RoadWatch - Empowering communities to build safer roads, one report at a time.
-
-Contact: team@novatex.dev
-Website: www.roadwatch.app
+<p align="center">
+   Developed by Team NovateX 
+  <strong>🛣️ RoadWatch</strong> — Empowering communities to build safer roads, one report at a time.
+</p>
+<p align="center">
+  📧 <a href="mailto:Developed by Team NovateX ">support.novatexstudios@gail.com</a> • 
+  🌐 <a href="https://www.rw-mandaue.is-great.org">www.rw-mandaue.is-great.org</a>
+</p>
+<p align="center">
+  <a href="https://github.com/vnxyzq/Roadwatch-Mandaue/stargazers">⭐ Star this repo</a> if you find it helpful!
+</p>
